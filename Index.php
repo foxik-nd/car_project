@@ -8,7 +8,7 @@
 </head>
 <body>
 <header>
-<nav class="navbar sticky-top navbar-expand-lg" style="background-color: #150cd2">
+<nav class="navbar fixed-top navbar-expand-lg" style="background-color: #150cd2">
   <a class="navbar-brand" href="index.php">
     <img src="logoI.png" width="30" height="30" class="d-inline-block align-top" alt="">Concession IPSSI
   </a>
