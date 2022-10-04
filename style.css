@@ -7,10 +7,14 @@ header{
     margin-bottom: 5%;
 }
 h2{
+    border-top: solid #150cd2;
+    border-bottom: solid #150cd2 ;
     text-align: center;
+    padding-top: 1%;
+    padding-bottom: 1%;
 }
 .container{
-    padding-top: 0.5%;
+    padding-top: 5.5%;
     padding-bottom: 0.5%;
     background-color: rgba(255, 255, 255, 0.14);
     margin-right: 20%;
@@ -104,32 +108,26 @@ footer{
 
 #FormType{
     display: flex;
-    flex-direction: row;
     justify-content: center;  
 }
 #FormMoteur{
     display: flex;
-    flex-direction: row;
     justify-content: center;  
 }
 #FormTarif{
     display: flex;
-    flex-direction: row;
     justify-content: center;  
 }
 #FormAM{
     display: flex;
-    flex-direction: row;
     justify-content: center;  
 }
 #FormAV{
     display: flex;
-    flex-direction: row;
     justify-content: center;  
 }
 #FormAll{
     display: flex;
-    flex-direction: row;
     justify-content: center;  
 }
 
