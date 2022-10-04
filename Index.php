@@ -84,12 +84,9 @@ if(isset($_POST['button30k'])) {
     get30k();
 }
 ?>
-
-</body>
-
 <footer>
         <div id="ipssi">
-            <a><img src="logoI.png" alt="logo ipssi" class="logo_ipssi"/></a>
+            <a><img src="logoI.png" img src="logoI.png" width="30" height="30" class="d-inline-block align-top"/></a>
             <p>Ce projet à été réaliser par des éleves d'<a href="https://ecole-ipssi.com/"><strong>IPSSI</strong></a></p>
             <p>le 3 et 4 octobre</p>
         </div>
@@ -104,6 +101,9 @@ if(isset($_POST['button30k'])) {
            </div>
         </div>
  </footer>
+
+
+</body>
 
 
 </html>
