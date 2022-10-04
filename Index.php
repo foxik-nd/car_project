@@ -126,9 +126,9 @@ if(isset($_POST['button2022m'])) {
             <div class="col-sm">
                 <div id="nous">
                     <ul>
-                    <li>Robin LANDAIS</li>
-                    <li>Mohammed OUAHHABI</li>
-                    <li>Nicolas DESFORGES</li>
+                        <li>Robin LANDAIS</li>
+                        <li>Mohammed OUAHHABI</li>
+                        <li>Nicolas DESFORGES</li>
                     </ul>
                 </div>
 
