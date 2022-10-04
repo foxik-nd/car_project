@@ -119,7 +119,7 @@ if(isset($_POST['button2022m'])) {
             <div class="col-sm">
                 <div id="ipssi">
                     <a><img src="logoI.png" img src="logoI.png" width="30" height="30" class="d-inline-block align-top"/></a>
-                    <p>Ce projet à été réaliser par des éleves d'<a href="https://ecole-ipssi.com/"><strong>IPSSI</strong></a></p>
+                    <p>Ce projet à été réaliser par des éleves d'<a id="LinkIPSSI" href="https://ecole-ipssi.com/"><strong>IPSSI</strong></a></p>
                     <p>le 3 et 4 octobre</p>
                 </div>
             </div>

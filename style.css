@@ -63,6 +63,9 @@ footer{
     background-color:#150cd2;
     color: white; 
 }
+#LinkIPSSI:hover{
+    color: white;
+}
 #ipssi{
     text-align: center;
 }
