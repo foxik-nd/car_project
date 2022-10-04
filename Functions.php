@@ -38,13 +38,13 @@ function getTab($url){
     // remplissage tableau suivant la requête
     foreach($resultat->records as $res){ 
         echo '<tr>';
-        echo '<th>' . $res->fields->MarquesV[0] . '</th>';   
-        echo '<th>' . $res->fields->Modele . '</th>';
-        echo '<th>' . $res->fields->TypeV[0] . '</th>';
-        echo '<th>' . $res->fields->Prix . '</th>';
-        echo '<th>' . $res->fields->Etat . '</th>';
-        echo '<th>' . $res->fields->Type_de_vehicules . '</th>';
-        echo '<th>' . $res->fields->Annee . '</th>';
+        echo '<td>' . $res->fields->MarquesV[0] . '</td>';   
+        echo '<td>' . $res->fields->Modele . '</td>';
+        echo '<td>' . $res->fields->TypeV[0] . '</td>';
+        echo '<td>' . $res->fields->Prix . '</td>';
+        echo '<td>' . $res->fields->Etat . '</td>';
+        echo '<td>' . $res->fields->Type_de_vehicules . '</td>';
+        echo '<td>' . $res->fields->Annee . '</td>';
         echo '</tr>';
     }
     echo '</table>';
