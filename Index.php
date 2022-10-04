@@ -125,14 +125,11 @@ if(isset($_POST['button2022m'])) {
             </div>
             <div class="col-sm">
                 <div id="nous">
-                    <h3>Les auteurs du site</h3>
-                    <div id="liste_auteurs">
-                        <ul>
-                        <li>Robin LANDAIS</li>
-                        <li>Mohammed OUAHHABI</li>
-                        <li>Nicolas DESFORGES</li>
-                        </ul>
-                    </div>
+                    <ul>
+                    <li>Robin LANDAIS</li>
+                    <li>Mohammed OUAHHABI</li>
+                    <li>Nicolas DESFORGES</li>
+                    </ul>
                 </div>
 
             </div>

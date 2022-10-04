@@ -58,23 +58,23 @@ tr{
 }
 
 footer{
-    display: flex;
-    justify-content: space-around;
+    padding-top: 1%;
     margin-top: 5%;
     background-color:#150cd2;
     color: white; 
 }
 #ipssi{
-    padding-top: 20px;
     text-align: center;
 }
 #ipssi a{
     text-decoration: none;
 }
+#nous{
+    text-align: center;
+}
 #nous ul{
-list-style: none;
-}  
-
+    list-style: none;
+}
 .containerF{
     padding-top: 0.5%;
     padding-bottom: 0.5%;
