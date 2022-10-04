@@ -98,21 +98,30 @@ if(isset($_POST['button2022a'])) {
 }
 ?>
 <footer>
-        <div id="ipssi">
-            <a><img src="logoI.png" img src="logoI.png" width="30" height="30" class="d-inline-block align-top"/></a>
-            <p>Ce projet à été réaliser par des éleves d'<a href="https://ecole-ipssi.com/"><strong>IPSSI</strong></a></p>
-            <p>le 3 et 4 octobre</p>
+    <div class="container">
+        <div class="row">
+            <div class="col-sm">
+                <div id="ipssi">
+                    <a><img src="logoI.png" img src="logoI.png" width="30" height="30" class="d-inline-block align-top"/></a>
+                    <p>Ce projet à été réaliser par des éleves d'<a href="https://ecole-ipssi.com/"><strong>IPSSI</strong></a></p>
+                    <p>le 3 et 4 octobre</p>
+                </div>
+            </div>
+            <div class="col-sm">
+                <div id="nous">
+                    <h3>Les auteurs du site</h3>
+                    <div id="liste_auteurs">
+                        <ul>
+                        <li>Robin LANDAIS</li>
+                        <li>Mohammed OUAHHABI</li>
+                        <li>Nicolas DESFORGES</li>
+                        </ul>
+                    </div>
+                </div>
+
+            </div>
         </div>
-        <div id="nous">
-          <h3>Les auteurs du site</h3>
-            <div id="liste_auteurs">
-             <ul>
-               <li>Robin LANDAIS</li>
-               <li>Mohammed OUAHHABI</li>
-               <li>Nicolas DESFORGES</li>
-             </ul>
-           </div>
-        </div>
+    </div>
  </footer>
 
 </body>
