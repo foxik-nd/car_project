@@ -95,4 +95,13 @@ function getVoitures1019(){
 function getVoitures2022(){
     getTab("https://api.airtable.com/v0/appLN11hnK1L9xW5Z/Vehicules?view=DatesortieV2022a" );
 }
+function getmoto49(){
+    getTab("https://api.airtable.com/v0/appLN11hnK1L9xW5Z/Vehicules?view=moto49m" );
+}
+function getmoto1019(){
+    getTab("https://api.airtable.com/v0/appLN11hnK1L9xW5Z/Vehicules?view=moto1019m" );
+}
+function getmoto2022(){
+    getTab("https://api.airtable.com/v0/appLN11hnK1L9xW5Z/Vehicules?view=moto2022m" );
+}
 ?>

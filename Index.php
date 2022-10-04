@@ -17,7 +17,7 @@
   </button>
   <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
     <div class="navbar-nav">
-      <a class="nav-item nav-link active" href="#">Les vehicules <span class="sr-only">(current)</span></a>
+      <a class="nav-item nav-link active" href="#" >Les vehicules <span class="sr-only">(current)</span></a>
       <a class="nav-item nav-link" href="AddCar.php">Ajouter un véhicule</a>
     </div>
   </div>
@@ -53,6 +53,12 @@
             <input type="submit" name="button49a" value="Véhicules 2004-2009"/>
             <input type="submit" name="button1019a" value="Véhicules 2010-2019"/>
             <input type="submit" name="button2022a" value="Véhicules 2020-2022"/>
+        </form>
+        <h4>Date de sortie des motos</h4>
+        <form method="post">
+            <input type="submit" name="button49m" value="moto 2004-2009"/>
+            <input type="submit" name="button1019m" value="moto 2010-2019"/>
+            <input type="submit" name="button2022m" value="moto 2020-2022"/>
         </form>
     </div>
     </div>
@@ -96,9 +102,18 @@ if(isset($_POST['button1019a'])) {
 if(isset($_POST['button2022a'])) {
     getVoitures2022();
 }
+if(isset($_POST['button49m'])) {
+    getmoto49();
+}
+if(isset($_POST['button1019m'])) {
+    getmoto1019();
+}
+if(isset($_POST['button2022m'])) {
+    getmoto2022();
+}
 ?>
 <footer>
-    <div class="container">
+    <div class="containerF">
         <div class="row">
             <div class="col-sm">
                 <div id="ipssi">
