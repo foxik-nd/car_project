@@ -89,13 +89,80 @@ footer{
 /*nav bar */
 
 .navbar-brand{
+    color:#add3f4;
+}
+.navbar-brand:hover{
     color: white;
 }
-
 .navbar-nav a{
     color:#add3f4;
     font-weight: bold;
 }
 .navbar-nav :hover{
+    color: white;
+}
+/* Boutons */
+
+#FormType{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;  
+}
+#FormMoteur{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;  
+}
+#FormTarif{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;  
+}
+#FormAM{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;  
+}
+#FormAV{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;  
+}
+#FormAll{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;  
+}
+
+input[type=text]{
+    border: 2px solid #150cd2;
+    border-radius: 4px;
+    margin: 2%;
+}
+input[type=submit]{
+    margin-top: 1%;
+    margin-bottom: 1%;
+    border: 2px solid #150cd2;
+    border-radius: 8px;
+    background-color: white;
+    color: #150cd2;
+    margin-right: 0.4%;
+    margin-left: 0.4%;
+}
+input[type=submit]:hover{
+    background-color: #150cd2;
+    color: white;
+}
+#valider{
+    margin-left: 50%;
+    margin-right: 50%;
+    border: 2px solid #150cd2;
+    border-radius: 8px;
+    background-color: white;
+    color: #150cd2;
+
+}
+#valider:hover{
+    background-color: #150cd2;
     color: white;
 }

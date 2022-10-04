@@ -17,47 +17,19 @@
   </button>
   <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
     <div class="navbar-nav">
-      <a class="nav-item nav-link active" href="#">Les vehicules <span class="sr-only">(current)</span></a>
-      <a class="nav-item nav-link" href="#">Ajouter un véhicule</a>
+      <a class="nav-item nav-link active" href="Index.php" >Les vehicules <span class="sr-only">(current)</span></a>
+      <a class="nav-item nav-link" href="AddCar.php">Ajouter un véhicule</a>
     </div>
   </div>
   </nav>
 </header>
-<div class="container">
+<div class="containerMDP">
 <h4>Entrer le mot de passe</h4>
         <form method="post">
-            <input type="text" name="MDP"/>
-            <input type="submit" name="Valider" />
+            <input type="text" class="form-control" placeholder="Mot de passe" aria-label="Mot de passe" id="FieldMDP"name="MDP"/>
+            <input type="submit" id="valider"name="Valider" />
         </form>
 </div>
-
-<footer>
-    <div class="containerF">
-        <div class="row">
-            <div class="col-sm">
-                <div id="ipssi">
-                    <a><img src="logoI.png" img src="logoI.png" width="30" height="30" class="d-inline-block align-top"/></a>
-                    <p>Ce projet à été réaliser par des éleves d'<a href="https://ecole-ipssi.com/"><strong>IPSSI</strong></a></p>
-                    <p>le 3 et 4 octobre</p>
-                </div>
-            </div>
-            <div class="col-sm">
-                <div id="nous">
-                    <h3>Les auteurs du site</h3>
-                    <div id="liste_auteurs">
-                        <ul>
-                        <li>Robin LANDAIS</li>
-                        <li>Mohammed OUAHHABI</li>
-                        <li>Nicolas DESFORGES</li>
-                        </ul>
-                    </div>
-                </div>
-
-            </div>
-        </div>
-    </div>
- </footer>
- 
 <?php
 $resultat=0;
 include 'Functions.php';
