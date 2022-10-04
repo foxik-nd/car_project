@@ -22,6 +22,8 @@ function getTab($url){
     curl_close($curl);
     
     $resultat = json_decode($resultat);
+
+    // création tableau 
     echo '<table>';
     echo '<tr>';
     echo '<th>' . 'Marque' . '</th>';
@@ -33,6 +35,7 @@ function getTab($url){
     echo '<th>' . 'Annee' . '</th>';
     echo '</tr>';
 
+    // remplissage tableau suivant la requête
     foreach($resultat->records as $res){ 
         echo '<tr>';
         echo '<th>' . $res->fields->MarquesV[0] . '</th>';   
