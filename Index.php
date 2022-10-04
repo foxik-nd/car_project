@@ -57,8 +57,6 @@
     </div>
     </div>
 
-
-
 <?php
 $resultat=0;
 include 'Functions.php';
