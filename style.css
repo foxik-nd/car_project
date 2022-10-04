@@ -54,6 +54,7 @@ tr:hover {
 }
 
 footer{
+    margin-top: 5%;
     display: flex;
     background-color:#150cd2;
     color: white; 
