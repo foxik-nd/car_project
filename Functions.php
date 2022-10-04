@@ -50,15 +50,17 @@ function getTab($url){
     echo '</table>';
 
 }
-
+// Récupère la liste des voitures electriques. Liste triée par ordre alphabétique des marques
 function getElectrique(){
     getTab("https://api.airtable.com/v0/appLN11hnK1L9xW5Z/Vehicules?sort%5B0%5D%5Bfield%5D=Marques&sort%5B0%5D%5Bdirection%5D=asc&view=Vehicules_electriques");
 }
 
+// Récupère la liste des voitures electriques. Liste triée par ordre alphabétique des marques
 function getThermique(){
     getTab("https://api.airtable.com/v0/appLN11hnK1L9xW5Z/Vehicules?sort%5B0%5D%5Bfield%5D=Marques&sort%5B0%5D%5Bdirection%5D=asc&view=Vehicules_thermiques");
 }
 
+// Récupère la liste des voitures electriques. Liste triée par ordre alphabétique des marques
 function getHybride(){
     getTab("https://api.airtable.com/v0/appLN11hnK1L9xW5Z/Vehicules?sort%5B0%5D%5Bfield%5D=Marques&sort%5B0%5D%5Bdirection%5D=asc&view=Vehicules_hybrides" );
 }
