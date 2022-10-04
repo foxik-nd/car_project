@@ -4,10 +4,24 @@
     <title>Concession IPSSI</title>
     <meta charset="UTF-8">
     <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 </head>
 <body>
 <header>
-    <h1 class="titre">Concession IPSSI</h1>
+<nav class="navbar sticky-top navbar-expand-lg" style="background-color: #150cd2">
+  <a class="navbar-brand" href="#">
+    <img src="logoI.png" width="30" height="30" class="d-inline-block align-top" alt="">Concession IPSSI
+  </a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+    <div class="navbar-nav">
+      <a class="nav-item nav-link active" href="#">Les vehicules <span class="sr-only">(current)</span></a>
+      <a class="nav-item nav-link" href="#">Ajouter un véhicule</a>
+    </div>
+  </div>
+  </nav>
 </header>
 
     <h2>Découvrir les Véhicules de la concession IPSSI</h2>
@@ -75,7 +89,7 @@ if(isset($_POST['button30k'])) {
 
 <footer>
         <div id="ipssi">
-            <a><img src="" alt="logo ipssi" class="logo_ipssi"/></a>
+            <a><img src="logoI.png" alt="logo ipssi" class="logo_ipssi"/></a>
             <p>Ce projet à été réaliser par des éleves d'<a href="https://ecole-ipssi.com/"><strong>IPSSI</strong></a></p>
             <p>le 3 et 4 octobre</p>
         </div>
