@@ -1,3 +1,4 @@
+/* Index.php */
 header{
     text-align: center;
     text-shadow: 2px;
@@ -59,7 +60,7 @@ tr:hover {
 tr{
     text-align:center;
 }
-
+/* Footer */
 footer{
     padding-top: 1%;
     margin-top: 5%;
@@ -103,7 +104,7 @@ footer{
 .navbar-nav :hover{
     color: white;
 }
-/* Boutons */
+/* Boutons page index */
 
 #FormType{
     display: flex;
@@ -130,11 +131,7 @@ footer{
     justify-content: center;  
 }
 
-input[type=text]{
-    border: 2px solid #150cd2;
-    border-radius: 4px;
-    margin: 2%;
-}
+
 input[type=submit]{
     margin-top: 1%;
     margin-bottom: 5%;
@@ -148,6 +145,12 @@ input[type=submit]{
 input[type=submit]:hover{
     background-color: #150cd2;
     color: white;
+}
+/*Boutons page addcar */
+input[type=text]{
+    border: 2px solid #150cd2;
+    border-radius: 4px;
+    margin: 2%;
 }
 #valider{
     margin-left: 50%;
