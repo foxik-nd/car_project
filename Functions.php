@@ -86,4 +86,13 @@ function getVoitures(){
 function getAll(){
     getTab("https://api.airtable.com/v0/appLN11hnK1L9xW5Z/Vehicules?sort%5B0%5D%5Bfield%5D=Marques&sort%5B0%5D%5Bdirection%5D=asc&view=Grid_view" );
 }
+function getVoitures49(){
+    getTab("https://api.airtable.com/v0/appLN11hnK1L9xW5Z/Vehicules?view=DatesortieV49a" );
+}
+function getVoitures1019(){
+    getTab("https://api.airtable.com/v0/appLN11hnK1L9xW5Z/Vehicules?view=DatesortieV1019a" );
+}
+function getVoitures2022(){
+    getTab("https://api.airtable.com/v0/appLN11hnK1L9xW5Z/Vehicules?view=DatesortieV2022a" );
+}
 ?>

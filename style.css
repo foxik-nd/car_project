@@ -12,9 +12,14 @@ h2{
 .container{
     padding-top: 0.5%;
     padding-bottom: 0.5%;
-    background-color: #fff7cd;
+    background-color: rgba(255, 255, 255, 0.14);
     margin-right: 20%;
     margin-left: 20%;
+}
+.container input{
+    border: 2px;
+    background-color: #150cd2;
+    color: white;
 }
 
 h3{
@@ -48,7 +53,8 @@ tr:hover {
 }
 
 footer{
-    background-color: #fff7cd;
+    background-color:#150cd2;
+    color: white;
     display: flex;
 }
 #ipssi{

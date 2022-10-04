@@ -83,6 +83,15 @@ if(isset($_POST['button1030k'])) {
 if(isset($_POST['button30k'])) {
     get30k();
 }
+if(isset($_POST['button49a'])) {
+    getVoitures49();
+}
+if(isset($_POST['button1019a'])) {
+    getVoitures1019();
+}
+if(isset($_POST['button2022a'])) {
+    getVoitures2022();
+}
 ?>
 <footer>
         <div id="ipssi">
