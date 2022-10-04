@@ -51,6 +51,10 @@ th{
 }
 tr:hover {
     background-color: #ddd;
+    
+}
+tr{
+    text-align:center;
 }
 
 footer{
@@ -63,27 +67,24 @@ footer{
 #ipssi{
     padding-top: 20px;
     text-align: center;
-    width: 50%;
 }
 #ipssi a{
     text-decoration: none;
 }
 #nous{
-    text-align: center;
-    width: 50%;
+
+    background-color: #FDF1B8;
 }
 
 #liste_auteurs ul{
     list-style: none;
 }
 .containerF{
-    width: 100%;
     padding-top: 0.5%;
     padding-bottom: 0.5%;
     margin-right: 20%;
     margin-left: 20%;
 }
-
 
 /*nav bar */
 
