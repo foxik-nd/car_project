@@ -87,21 +87,21 @@ function getAll(){
     getTab("https://api.airtable.com/v0/appLN11hnK1L9xW5Z/Vehicules?sort%5B0%5D%5Bfield%5D=Marques&sort%5B0%5D%5Bdirection%5D=asc&view=Grid_view" );
 }
 function getVoitures49(){
-    getTab("https://api.airtable.com/v0/appLN11hnK1L9xW5Z/Vehicules?view=DatesortieV49a" );
+    getTab("https://api.airtable.com/v0/appLN11hnK1L9xW5Z/Vehicules?sort%5B0%5D%5Bfield%5D=Annee&sort%5B0%5D%5Bdirection%5D=asc&view=DatesortieV49a" );
 }
 function getVoitures1019(){
-    getTab("https://api.airtable.com/v0/appLN11hnK1L9xW5Z/Vehicules?view=DatesortieV1019a" );
+    getTab("https://api.airtable.com/v0/appLN11hnK1L9xW5Z/Vehicules?sort%5B0%5D%5Bfield%5D=Annee&sort%5B0%5D%5Bdirection%5D=asc&view=DatesortieV1019a" );
 }
 function getVoitures2022(){
-    getTab("https://api.airtable.com/v0/appLN11hnK1L9xW5Z/Vehicules?view=DatesortieV2022a" );
+    getTab("https://api.airtable.com/v0/appLN11hnK1L9xW5Z/Vehicules?sort%5B0%5D%5Bfield%5D=Annee&sort%5B0%5D%5Bdirection%5D=asc&view=DatesortieV2022a" );
 }
 function getmoto49(){
-    getTab("https://api.airtable.com/v0/appLN11hnK1L9xW5Z/Vehicules?view=moto49m" );
+    getTab("https://api.airtable.com/v0/appLN11hnK1L9xW5Z/Vehicules?sort%5B0%5D%5Bfield%5D=Annee&sort%5B0%5D%5Bdirection%5D=asc&view=moto49m" );
 }
 function getmoto1019(){
-    getTab("https://api.airtable.com/v0/appLN11hnK1L9xW5Z/Vehicules?view=moto1019m" );
+    getTab("https://api.airtable.com/v0/appLN11hnK1L9xW5Z/Vehicules?sort%5B0%5D%5Bfield%5D=Annee&sort%5B0%5D%5Bdirection%5D=asc&view=moto1019m" );
 }
 function getmoto2022(){
-    getTab("https://api.airtable.com/v0/appLN11hnK1L9xW5Z/Vehicules?view=moto2022m" );
+    getTab("https://api.airtable.com/v0/appLN11hnK1L9xW5Z/Vehicules?sort%5B0%5D%5Bfield%5D=Annee&sort%5B0%5D%5Bdirection%5D=asc&view=moto2022m" );
 }
 ?>
