@@ -106,32 +106,26 @@ footer{
 
 #FormType{
     display: flex;
-    flex-direction: row;
     justify-content: center;  
 }
 #FormMoteur{
     display: flex;
-    flex-direction: row;
     justify-content: center;  
 }
 #FormTarif{
     display: flex;
-    flex-direction: row;
     justify-content: center;  
 }
 #FormAM{
     display: flex;
-    flex-direction: row;
     justify-content: center;  
 }
 #FormAV{
     display: flex;
-    flex-direction: row;
     justify-content: center;  
 }
 #FormAll{
     display: flex;
-    flex-direction: row;
     justify-content: center;  
 }
 
