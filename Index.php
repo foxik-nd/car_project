@@ -12,12 +12,11 @@
 
     <h2>Découvrir les Véhicules de la concession IPSSI</h2>
     <div class="container">
+    <div class="ContainerPost">
     <h3>Quels véhicules souhaitez vous voir ?</h3>
-
     <form method="post">
     <input type="submit" name="buttonAll" value="Tous les véhicules"/>
     </form>
-    <div class="ContainerPost">
     <h4>Types de véhicule</h4>
         <form method="post">
             <input type="submit" name="buttonVoitures" value="Voitures"/>
@@ -73,6 +72,24 @@ if(isset($_POST['button30k'])) {
 ?>
 
 </body>
+
+<footer>
+        <div id="ipssi">
+            <a><img src="" alt="logo ipssi" class="logo_ipssi"/></a>
+            <p>Ce projet à été réaliser par des éleves d'<a href="https://ecole-ipssi.com/"><strong>IPSSI</strong></a></p>
+            <p>le 3 et 4 octobre</p>
+        </div>
+        <div id="nous">
+          <h3>Les auteurs du site</h3>
+            <div id="liste_auteurs">
+             <ul>
+               <li>Robin LANDAIS</li>
+               <li>Mohammed OUAHHABI</li>
+               <li>Nicolas DESFORGES</li>
+             </ul>
+           </div>
+        </div>
+ </footer>
 
 
 </html>

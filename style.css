@@ -46,3 +46,24 @@ th{
 tr:hover {
     background-color: #ddd;
 }
+
+footer{
+    background-color: #fff7cd;
+    display: flex;
+}
+#ipssi{
+    padding-top: 20px;
+    text-align: center;
+    width: 50%;
+}
+#ipssi a{
+    text-decoration: none;
+}
+#nous{
+    text-align: center;
+    width: 50%;
+}
+
+#liste_auteurs ul{
+    list-style: none;
+}
