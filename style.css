@@ -71,14 +71,10 @@ footer{
 #ipssi a{
     text-decoration: none;
 }
-#nous{
+#nous ul{
+list-style: none;
+}  
 
-    background-color: #FDF1B8;
-}
-
-#liste_auteurs ul{
-    list-style: none;
-}
 .containerF{
     padding-top: 0.5%;
     padding-bottom: 0.5%;
