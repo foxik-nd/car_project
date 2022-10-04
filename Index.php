@@ -48,6 +48,12 @@
             <input type="submit" name="button1030k" value="Entre 10000€ et 30000€"/>
             <input type="submit" name="button30k" value="Supérieur à 30000€"/>
         </form>
+        <h4>Date de sortie des voitures</h4>
+        <form method="post">
+            <input type="submit" name="button49a" value="Véhicules 2004-2009"/>
+            <input type="submit" name="button1019a" value="Véhicules 2010-2019"/>
+            <input type="submit" name="button2022a" value="Véhicules 2020-2022"/>
+        </form>
     </div>
     </div>
 
@@ -111,8 +117,5 @@ if(isset($_POST['button2022a'])) {
         </div>
  </footer>
 
-
 </body>
-
-
 </html>
