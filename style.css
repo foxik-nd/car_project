@@ -165,3 +165,23 @@ input[type=text]{
     background-color: #150cd2;
     color: white;
 }
+
+/*bouton modif*/
+#btn_modif{
+    background-color: #150cd2;
+    color: white;
+    border-color:  #150cd2;
+    border-radius: 8px;
+    padding-top: 3%;
+    padding-bottom: 3%;
+}
+
+/*bouton supprimé*/
+#btn_supp{
+    background-color: red;
+    color: white;
+    border-color:  red;
+    border-radius: 8px;
+    padding-top: 3%;
+    padding-bottom: 3%;
+}

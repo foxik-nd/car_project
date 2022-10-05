@@ -49,8 +49,9 @@ function getTab($url){
         echo '<td value="'. $res->fields->Annee . '">' . $res->fields->Annee . '</td>';
         ?>
         <td>
-            <button onclick="getdata(this, '<?= $res->id ?>')" class="btn btn-primary" type="button" data-toggle="modal" data-target="#modifier">Modifier</button>
+            <button onclick="getdata(this, '<?= $res->id ?>')" id="btn_modif"class="btn btn-primary" type="button" data-toggle="modal" data-target="#modifier">Modifier</button>
         </td>
+        <td>' .'<button onclick="supprimer()"class="btn btn-primary" id="btn_supp">Supprimer</button>' .'</td>';
         <?php
         echo '</tr>';
     }
@@ -237,4 +238,15 @@ function getmoto2022(){
             console.log(`Erreur: ${error.message}`);
             })
     }
+
+    //Supprimer des véhicule 
+    function supprimer(){
+        fetch('https://api.airtable.com/v0/appLN11hnK1L9xW5Z/Vehicules/reccLiRxbk8aaJYOW', {
+            method: 'DELETE',
+             headers: {
+                 'Authorization': 'Bearer keyV98BwrIVFyJoWQ'
+    }
+}); 
+    document.location.reload();
+}
 </script>
