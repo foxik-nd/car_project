@@ -77,8 +77,8 @@
       </td>
       <td>
         <select name="Type" id="FieldType" style="border-radius:8px; border: 2px solid #150cd2; padding:7%;">
-          <option value="Moto">Voiture</option>
-          <option value="Voiture">Moto</option>
+          <option value="Voiture">Voiture</option>
+          <option value="Moto">Moto</option>
         </select>
       </td>
       <td><input type="submit" class="form-control" id="Creer" value="Créer"></td>
@@ -88,6 +88,14 @@
   </table>
 </div>
 
+<!--pop up validation -->
+<div class="modalPopUp" id="modalPopUp">
+  <div class="modalPopUp-back"></div>
+  <div class="modalPopUp-container">
+    Véhicule Créer<br />
+    <a class="btn btn-primary" href="#" role="button" id="modalPopUp-close">Fermer</a>
+  </div>
+</div>
 
 <script> 
 
@@ -124,7 +132,7 @@
       if(response.ok){
         response.json().then((NewCar) => {
           console.log(NewCar);
-          document.location.reload();
+          document.getElementById('modalPopUp').style.display = 'block';
         })
       }else{
         console.log('Erreur statut !=200');
@@ -134,9 +142,16 @@
     })
   })
 
+  document.getElementById('modalPopUp-close').addEventListener('click', function(e) {
+  document.getElementById('modalPopUp').style.display = 'none';
+  document.location.reload();
+})
 
 
 </script>
+
+
+<!-- Footer -->
 <footer style="position:fixed; bottom:0; width: 100%;">
     <div class="containerF">
         <div class="row">

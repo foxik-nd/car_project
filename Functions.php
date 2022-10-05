@@ -52,7 +52,7 @@ function getTab($url){
         <td>
             <button onclick="getdata(this, '<?= $res->id ?>')" id="btn_modif"class="btn btn-primary" type="button" data-toggle="modal" data-target="#modifier">Modifier</button>
         </td>
-        <td><button onclick="supprimer()"class="btn btn-primary" id="btn_supp">Supprimer</button>  </td>
+        <td><button onclick="supprimer(this, '<?= $res->id ?>')"class="btn btn-primary" id="btn_supp">Supprimer</button>  </td>
         <?php
         echo '</tr>';
     }
@@ -121,6 +121,35 @@ function getmoto1019(){
 function getmoto2022(){
     getTab("https://api.airtable.com/v0/appLN11hnK1L9xW5Z/Vehicules?sort%5B0%5D%5Bfield%5D=Annee&sort%5B0%5D%5Bdirection%5D=asc&view=moto2022m" );
 }
+/*
+function getOptionMarque()
+{
+    $curl = curl_init();
+
+    curl_setopt($curl, CURLOPT_URL,"https://api.airtable.com/v0/appLN11hnK1L9xW5Z/Marques?maxRecords=3&view=Grid_view" );
+    
+    curl_setopt($curl,CURLOPT_RETURNTRANSFER, true);
+    
+    $authorization = "Authorization: Bearer keyDNpzJwq1L9nspB";
+    
+    curl_setopt($curl, CURLOPT_HTTPHEADER, array('Content-type: application/json', $authorization));
+    
+    //Forcer le certificat ssl
+    $certificate = "C:\wamp64\cacert.pem";
+    curl_setopt($curl, CURLOPT_CAINFO, $certificate);
+    curl_setopt($curl, CURLOPT_CAPATH, $certificate);
+
+
+    $resultat= curl_exec($curl);
+    
+    curl_close($curl);
+    //décodage du json récupérer pour etre exploiter
+    $resultat = json_decode($resultat);
+    foreach($resultat->records as $res){
+        echo '<option value="' . $res->id . '">' . $res->fields->Nom . '</option>';
+    }
+
+}*/
 
 ?>
 <!-- lien bootsrap -->
@@ -143,64 +172,96 @@ function getmoto2022(){
       <div class="modal-body">
       <form enctype="multipart/form-data" method="POST">
         <div class="form-group">
-            <label >Entrer la Marque</label>
-            <input type="text" class="form-control" id="Marque"  placeholder="Entrer la Marque">
+            <label >Entrer la Marque</label> <br>
+            <select name="marque" id="FieldMarquesModif" style="border-radius:8px; border: 2px solid #150cd2; padding:2.5%;" >
+          <option value="recOrrHKLZcLqHNKo">Aprilia</option>
+          <option value="recE2nDDtHuGKCLTw">BMW</option>
+          <option value="recuppuyZFiPdNZjV">Energica</option>
+          <option value="recY6j5DOliJfOxSX">Harley Davidson</option>
+          <option value="recAbiBQ0Po1yO5KO">Honda</option>
+          <option value="recjWiK7vav7x5PEh">Mercedes</option>
+          <option value="recI6leubd5GOEUQo">Peugeot</option>
+          <option value="recH3jAaZbWuzYumv">Renault</option>
+          <option value="rec7OGXKXDPDAO9uX">Suzuki</option>
+          <option value="recYYwgCmsPYrOONs">Tesla</option>
+          <option value="rececBeyGzmdZ613o">Toyota</option>
+          <option value="recKj6MJTgMOfmjRk">Yamaha</option>
+        </select>
         </div>
 
         <div class="form-group">
-            <label >Entrer la Modèle</label>
-            <input type="text" class="form-control" id="Modele"  placeholder="Entrer la Modèle">
+            <label >Entrer le Modèle</label>
+            <input type="text" class="form-control" id="Modele"  placeholder="Entrer le Modèle" >
         </div>
 
         <div class="form-group">
-            <label >Entrer la Moteur</label>
-            <input type="text" class="form-control" id="Moteur"  placeholder="Entrer la Moteur">
+            <label >Entrer le type Moteur</label><br>
+            <select name="Moteur" id="FieldMoteurModif" style="border-radius:8px; border: 2px solid #150cd2; padding:3.5%;">
+                <option value="recntyRPWMQBGzzaT">Thermique</option>
+                <option value="recoa32F847uAeB2N">Hybride</option>
+                <option value="recohOXVDrltOpg3y">Electrique</option>
+            </select>
         </div>
 
         <div class="form-group">
-            <label >Entrer la Prix</label>
-            <input type="text" class="form-control" id="Prix"  placeholder="Entrer la Prix">
+            <label >Entrer le Prix</label>
+            <input type="text" class="form-control" id="Prix"  placeholder="Entrer le Prix" >
         </div>
 
         <div class="form-group">
-            <label >Entrer la Etat</label>
-            <input type="text" class="form-control" id="Etat"  placeholder="Entrer la Etat">
+            <label >Entrer l'Etat</label><br>
+            <select name="etat" id="FieldEtatModif"style="border-radius:8px; border: 2px solid #150cd2; padding:3%;" >
+                <option value="Neuf">Neuf</option>
+                <option value="Occasion bon état">Occasion bon état</option>
+                <option value="Occasion mauvais état">Occasion mauvais état</option>
+            </select>
         </div>
 
         <div class="form-group">
-            <label >Entrer la Type</label>
-            <input type="text" class="form-control" id="Type"  placeholder="Entrer la Type">
+            <label >Entrer le Type de véhicule</label><br>
+            <select name="Type" id="FieldTypeModif" style="border-radius:8px; border: 2px solid #150cd2; padding:3%;" >
+                <option value="Voiture">Voiture</option>
+                <option value="Moto">Moto</option>
+            </select>
         </div>
 
         <div class="form-group">
-            <label >Entrer la Annee</label>
-            <input type="text" class="form-control" id="Annee"  placeholder="Entrer la Annee">
+            <label >Entrer l'Annee</label>
+            <input type="text" class="form-control" id="Annee"  placeholder="Entrer l'Annee" >
             <input type="hidden" id="id">
         </div>
        
     </form>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-secondary" data-dismiss="modal" id="CloseButtonModif">Close</button>
         <button type="button" onclick="postdata()" class="btn btn-primary">Save changes</button>
       </div>
     </div>
   </div>
 </div>
-<!-- modale pour afficher les donées  -->
+
+<!--pop up Suppression -->
+<div class="modalPopUp" id="modalPopUp">
+  <div class="modalPopUp-back"></div>
+  <div class="modalPopUp-container">
+    Véhicule supprimer<br />
+    <a class="btn btn-primary" href="#" role="button" id="modalPopUp-close">Fermer</a>
+  </div>
+</div>
 
 <script>
      const API_KEY='keyfjX9CsC0bAcN1H';
      const URl= `https://api.airtable.com/v0/appLN11hnK1L9xW5Z/Vehicules?api_key=${API_KEY}`;
     function getdata(obj, id){
-        document.getElementById("Marque").value = (obj.parentNode).parentNode.children.item(0).getAttribute('value') 
-        document.getElementById("Modele").value = (obj.parentNode).parentNode.children.item(1).getAttribute('value')
-        document.getElementById("Moteur").value = (obj.parentNode).parentNode.children.item(2).getAttribute('value')   
-        document.getElementById("Prix").value = (obj.parentNode).parentNode.children.item(3).getAttribute('value')
-        document.getElementById("Etat").value = (obj.parentNode).parentNode.children.item(4).getAttribute('value')
-        document.getElementById("Type").value = (obj.parentNode).parentNode.children.item(5).getAttribute('value')
-        document.getElementById("Annee").value = (obj.parentNode).parentNode.children.item(6).getAttribute('value')
-        document.getElementById('id').value = id
+        document.getElementById("FieldMarquesModif").value = (obj.parentNode).parentNode.children.item(0).getAttribute('value') ;
+        document.getElementById("Modele").value = (obj.parentNode).parentNode.children.item(1).getAttribute('value');
+        document.getElementById("FieldMoteurModif").value = (obj.parentNode).parentNode.children.item(2).getAttribute('value');
+        document.getElementById("Prix").value = (obj.parentNode).parentNode.children.item(3).getAttribute('value');
+        document.getElementById("FieldEtatModif").value = (obj.parentNode).parentNode.children.item(4).getAttribute('value');
+        document.getElementById("FieldTypeModif").value = (obj.parentNode).parentNode.children.item(5).getAttribute('value');
+        document.getElementById("Annee").value = (obj.parentNode).parentNode.children.item(6).getAttribute('value');
+        document.getElementById('id').value = id;
     }
 
     function postdata(){
@@ -210,12 +271,16 @@ function getmoto2022(){
             'records':[{
                 "id": document.getElementById("id").value,
                 'fields':{
-                    //'marque':document.getElementById("Marque").value,
+                    'Marques':[
+                        document.getElementById("FieldMarquesModif").value,
+                    ],
                     'Modele':document.getElementById('Modele').value,
-                    //'Type':document.getElementById('Moteur').value,
+                    'Type' : [
+            document.getElementById("FieldMoteurModif").value,
+                     ],
                     'Prix'  :parseFloat(document.getElementById('Prix').value),
-                    'Etat'  :document.getElementById('Etat').value,
-                    'Type_de_vehicules'  :document.getElementById('Type').value,
+                    'Etat'  :document.getElementById('FieldEtatModif').value,
+                    'Type_de_vehicules' : document.getElementById('FieldTypeModif').value,
                     'Annee' :parseInt(document.getElementById('Annee').value),
                 }
             }]
@@ -231,7 +296,7 @@ function getmoto2022(){
             if(response.ok){
                 response.json().then((data) => {    
                 console.log(data);
-                document.location.reload();
+                location.reload();
                 })
             }else{
                 console.log('Erreur statut !=200');
@@ -242,13 +307,19 @@ function getmoto2022(){
     }
 
     //Supprimer des véhicule 
-    function supprimer(){
-        fetch('https://api.airtable.com/v0/appLN11hnK1L9xW5Z/Vehicules/reccLiRxbk8aaJYOW', {
+    function supprimer(obj, id){
+        console.log(document.getElementById('id').value =id);
+        fetch(`https://api.airtable.com/v0/appLN11hnK1L9xW5Z/Vehicules/${document.getElementById('id').value = id}`, {
             method: 'DELETE',
              headers: {
                  'Authorization': 'Bearer keyV98BwrIVFyJoWQ'
     }
-}); 
-    document.location.reload();
+    
+});
+document.getElementById('modalPopUp').style.display = 'block';
 }
+document.getElementById('modalPopUp-close').addEventListener('click', function(e) {
+  document.getElementById('modalPopUp').style.display = 'none';
+  document.location.reload();
+})
 </script>

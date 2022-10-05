@@ -24,7 +24,7 @@
   </nav>
 </header>
 
-<h2>Découvrir les Véhicules de la concession IPSSI</h2>
+<h2 bold>Découvrir les Véhicules de la concession IPSSI</h2>
     <div class="container">
     <div class="ContainerPost">
     <h3>Quels véhicules souhaitez vous voir ?</h3>
