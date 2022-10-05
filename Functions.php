@@ -47,7 +47,11 @@ function getTab($url){
         echo '<td value="'. $res->fields->Etat . '">' . $res->fields->Etat . '</td>';
         echo '<td value="'. $res->fields->Type_de_vehicules . '">' . $res->fields->Type_de_vehicules . '</td>';
         echo '<td value="'. $res->fields->Annee . '">' . $res->fields->Annee . '</td>';
-        echo '<td>' .'<button onclick="getdata(this)" class="btn btn-primary" type="button" data-toggle="modal" data-target="#modifier" >Modifier</button>' .'</td>';
+        ?>
+        <td>
+            <button onclick="getdata(this, '<?= $res->id ?>')" class="btn btn-primary" type="button" data-toggle="modal" data-target="#modifier">Modifier</button>
+        </td>
+        <?php
         echo '</tr>';
     }
     echo '</table>';
@@ -135,7 +139,7 @@ function getmoto2022(){
         </button>
       </div>
       <div class="modal-body">
-      <form enctype="multipart/form-data" >
+      <form enctype="multipart/form-data" method="POST">
         <div class="form-group">
             <label >Entrer la Marque</label>
             <input type="text" class="form-control" id="Marque"  placeholder="Entrer la Marque">
@@ -169,6 +173,7 @@ function getmoto2022(){
         <div class="form-group">
             <label >Entrer la Annee</label>
             <input type="text" class="form-control" id="Annee"  placeholder="Entrer la Annee">
+            <input type="hidden" id="id">
         </div>
        
     </form>
@@ -183,7 +188,9 @@ function getmoto2022(){
 <!-- modale pour afficher les donées  -->
 
 <script>
-    function getdata(obj){
+     const API_KEY='keyfjX9CsC0bAcN1H';
+     const URl= `https://api.airtable.com/v0/appLN11hnK1L9xW5Z/Vehicules?api_key=${API_KEY}`;
+    function getdata(obj, id){
         document.getElementById("Marque").value = (obj.parentNode).parentNode.children.item(0).getAttribute('value') 
         document.getElementById("Modele").value = (obj.parentNode).parentNode.children.item(1).getAttribute('value')
         document.getElementById("Moteur").value = (obj.parentNode).parentNode.children.item(2).getAttribute('value')   
@@ -191,5 +198,43 @@ function getmoto2022(){
         document.getElementById("Etat").value = (obj.parentNode).parentNode.children.item(4).getAttribute('value')
         document.getElementById("Type").value = (obj.parentNode).parentNode.children.item(5).getAttribute('value')
         document.getElementById("Annee").value = (obj.parentNode).parentNode.children.item(6).getAttribute('value')
+        document.getElementById('id').value = id
+    }
+
+    function postdata(){
+        const API_KEY='keyfjX9CsC0bAcN1H';
+        const URL= `https://api.airtable.com/v0/appLN11hnK1L9xW5Z/Vehicules?api_key=${API_KEY}`;
+        let data = { 
+            'records':[{
+                "id": document.getElementById("id").value,
+                'fields':{
+                    //'marque':document.getElementById("Marque").value,
+                    'Modele':document.getElementById('Modele').value,
+                    //'Type':document.getElementById('Moteur').value,
+                    'Prix'  :parseFloat(document.getElementById('Prix').value),
+                    'Etat'  :document.getElementById('Etat').value,
+                    'Type_de_vehicules'  :document.getElementById('Type').value,
+                    'Annee' :parseInt(document.getElementById('Annee').value),
+                }
+            }]
+        
+         }
+         console.log(data)
+                fetch(URL,{
+            method: 'PATCH',
+            headers: {'Content-Type': 'application/json'},
+            body:JSON.stringify(data),
+            })
+            .then((response)=>{
+            if(response.ok){
+                response.json().then((data) => {    
+                console.log(data);
+                })
+            }else{
+                console.log('Erreur statut !=200');
+            }
+            }).catch((error) =>{
+            console.log(`Erreur: ${error.message}`);
+            })
     }
 </script>

@@ -62,8 +62,6 @@
         </form>
     </div>
     </div>
-
-
 <?php
 $resultat=0;
 include 'Functions.php';
@@ -135,7 +133,7 @@ if(isset($_POST['button2022m'])) {
             </div>
         </div>
     </div>
- </footer>
+</footer>
 
 </body>
 </html>
