@@ -3,7 +3,6 @@
 function getTab($url){
     $curl = curl_init();
 
-
     curl_setopt($curl, CURLOPT_URL,$url );
     
     curl_setopt($curl,CURLOPT_RETURNTRANSFER, true);
@@ -34,19 +33,21 @@ function getTab($url){
     echo '<th>' . 'Etat' . '</th>';
     echo '<th>' . 'Type' . '</th>';
     echo '<th>' . 'Annee' . '</th>';
+    echo '<th>' . 'Action Modifier' . '</th>';
     echo '</tr>';
 
     // remplissage tableau suivant la requête
     // chaque élement de "fields" récupérer est placer dans une case du tableau
     foreach($resultat->records as $res){ 
         echo '<tr>';
-        echo '<td>' . $res->fields->MarquesV[0] . '</td>';   
-        echo '<td>' . $res->fields->Modele . '</td>';
-        echo '<td>' . $res->fields->TypeV[0] . '</td>';
-        echo '<td>' . $res->fields->Prix . '</td>';
-        echo '<td>' . $res->fields->Etat . '</td>';
-        echo '<td>' . $res->fields->Type_de_vehicules . '</td>';
-        echo '<td>' . $res->fields->Annee . '</td>';
+        echo '<td value="'. $res->fields->MarquesV[0] .'">' . $res->fields->MarquesV[0] . '</td>';   
+        echo '<td value="'. $res->fields->Modele . '">' . $res->fields->Modele . '</td>';
+        echo '<td value="'. $res->fields->TypeV[0] . '">' . $res->fields->TypeV[0] . '</td>';
+        echo '<td value="'. $res->fields->Prix . '">' . $res->fields->Prix . '</td>';
+        echo '<td value="'. $res->fields->Etat . '">' . $res->fields->Etat . '</td>';
+        echo '<td value="'. $res->fields->Type_de_vehicules . '">' . $res->fields->Type_de_vehicules . '</td>';
+        echo '<td value="'. $res->fields->Annee . '">' . $res->fields->Annee . '</td>';
+        echo '<td>' .'<button onclick="getdata(this)" class="btn btn-primary" type="button" data-toggle="modal" data-target="#modifier" >Modifier</button>' .'</td>';
         echo '</tr>';
     }
     echo '</table>';
@@ -88,7 +89,7 @@ function getVoitures(){
 }
 // Affiche la liste de tous les véhicules. Liste triée par ordre alphabétique des marques
 function getAll(){
-    getTab("https://api.airtable.com/v0/appLN11hnK1L9xW5Z/Vehicules?sort%5B0%5D%5Bfield%5D=Marques&sort%5B0%5D%5Bdirection%5D=asc&view=Grid_view" );
+    getTab("https://api.airtable.com/v0/appLN11hnK1L9xW5Z/Vehicules?view=Grid_view" );
 }
 // Affiche la liste des voitures créée entre 2004 et 2009. Liste triée par ordre croissant des années
 function getVoitures49(){
@@ -114,4 +115,81 @@ function getmoto1019(){
 function getmoto2022(){
     getTab("https://api.airtable.com/v0/appLN11hnK1L9xW5Z/Vehicules?sort%5B0%5D%5Bfield%5D=Annee&sort%5B0%5D%5Bdirection%5D=asc&view=moto2022m" );
 }
+
 ?>
+<!-- lien bootsrap -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js" integrity="sha512-aVKKRRi/Q/YV+4mjoKBsE4x3H+BkegoM/em46NNlCqNTmUYADjBbeNefNxYV7giUp0VxICtqdrbqU7iVaeZNXA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.min.js" integrity="sha384-+sLIOodYLS7CIrQpBjl+C7nPvqq+FbNUBDunl/OZv93DB7Ln/533i8e/mZXLi/P+" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct" crossorigin="anonymous"></script>
+<!-- lien bootsrap  -->
+
+<!-- modale pour afficher les donées  -->
+<div class="modal fade" id="modifier" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLongTitle">Modal title</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+      <form enctype="multipart/form-data" >
+        <div class="form-group">
+            <label >Entrer la Marque</label>
+            <input type="text" class="form-control" id="Marque"  placeholder="Entrer la Marque">
+        </div>
+
+        <div class="form-group">
+            <label >Entrer la Modèle</label>
+            <input type="text" class="form-control" id="Modele"  placeholder="Entrer la Modèle">
+        </div>
+
+        <div class="form-group">
+            <label >Entrer la Moteur</label>
+            <input type="text" class="form-control" id="Moteur"  placeholder="Entrer la Moteur">
+        </div>
+
+        <div class="form-group">
+            <label >Entrer la Prix</label>
+            <input type="text" class="form-control" id="Prix"  placeholder="Entrer la Prix">
+        </div>
+
+        <div class="form-group">
+            <label >Entrer la Etat</label>
+            <input type="text" class="form-control" id="Etat"  placeholder="Entrer la Etat">
+        </div>
+
+        <div class="form-group">
+            <label >Entrer la Type</label>
+            <input type="text" class="form-control" id="Type"  placeholder="Entrer la Type">
+        </div>
+
+        <div class="form-group">
+            <label >Entrer la Annee</label>
+            <input type="text" class="form-control" id="Annee"  placeholder="Entrer la Annee">
+        </div>
+       
+    </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" onclick="postdata()" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- modale pour afficher les donées  -->
+
+<script>
+    function getdata(obj){
+        document.getElementById("Marque").value = (obj.parentNode).parentNode.children.item(0).getAttribute('value') 
+        document.getElementById("Modele").value = (obj.parentNode).parentNode.children.item(1).getAttribute('value')
+        document.getElementById("Moteur").value = (obj.parentNode).parentNode.children.item(2).getAttribute('value')   
+        document.getElementById("Prix").value = (obj.parentNode).parentNode.children.item(3).getAttribute('value')
+        document.getElementById("Etat").value = (obj.parentNode).parentNode.children.item(4).getAttribute('value')
+        document.getElementById("Type").value = (obj.parentNode).parentNode.children.item(5).getAttribute('value')
+        document.getElementById("Annee").value = (obj.parentNode).parentNode.children.item(6).getAttribute('value')
+    }
+</script>
