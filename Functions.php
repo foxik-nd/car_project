@@ -231,6 +231,7 @@ function getmoto2022(){
             if(response.ok){
                 response.json().then((data) => {    
                 console.log(data);
+                document.location.reload();
                 })
             }else{
                 console.log('Erreur statut !=200');
