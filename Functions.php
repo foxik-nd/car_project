@@ -34,6 +34,7 @@ function getTab($url){
     echo '<th>' . 'Type' . '</th>';
     echo '<th>' . 'Annee' . '</th>';
     echo '<th>' . 'Action Modifier' . '</th>';
+    echo '<th>' . 'Action Supprimer' . '</th>';
     echo '</tr>';
 
     // remplissage tableau suivant la requête
@@ -51,7 +52,7 @@ function getTab($url){
         <td>
             <button onclick="getdata(this, '<?= $res->id ?>')" id="btn_modif"class="btn btn-primary" type="button" data-toggle="modal" data-target="#modifier">Modifier</button>
         </td>
-        <td>' .'<button onclick="supprimer()"class="btn btn-primary" id="btn_supp">Supprimer</button>' .'</td>';
+        <td><button onclick="supprimer()"class="btn btn-primary" id="btn_supp">Supprimer</button>  </td>
         <?php
         echo '</tr>';
     }
