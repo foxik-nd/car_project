@@ -126,7 +126,7 @@ function getOptionMarque()
 {
     $curl = curl_init();
 
-    curl_setopt($curl, CURLOPT_URL,"https://api.airtable.com/v0/appLN11hnK1L9xW5Z/Marques?maxRecords=3&view=Grid_view" );
+    curl_setopt($curl, CURLOPT_URL,"https://api.airtable.com/v0/appLN11hnK1L9xW5Z/Marques?view=Grid_view" );
     
     curl_setopt($curl,CURLOPT_RETURNTRANSFER, true);
     
@@ -159,7 +159,7 @@ function getOptionMarque()
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct" crossorigin="anonymous"></script>
 <!-- lien bootsrap  -->
 
-<!-- modale pour afficher les donées  -->
+<!-- modale pour afficher les données  -->
 <div class="modal fade" id="modifier" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered" role="document">
     <div class="modal-content">
@@ -245,7 +245,7 @@ function getOptionMarque()
 <div class="modalPopUp" id="modalPopUp">
   <div class="modalPopUp-back"></div>
   <div class="modalPopUp-container">
-    Véhicule supprimer<br />
+    Véhicule supprimé<br />
     <a class="btn btn-primary" href="#" role="button" id="modalPopUp-close">Fermer</a>
   </div>
 </div>
