@@ -6,6 +6,7 @@
     <!-- insertion du css et bootstrap -->
     <link rel="stylesheet" type="text/css" href="style.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <?php include 'Functions.php'?>
 </head>
 <body>
 <header>
@@ -43,25 +44,12 @@
     <tr>
       <td>
         <select name="moteurs" id="FieldMoteur" style="border-radius:8px; border: 2px solid #150cd2; padding:4.5%;" >
-          <option value="recntyRPWMQBGzzaT">Thermique</option>
-          <option value="recoa32F847uAeB2N">Hybride</option>
-          <option value="recohOXVDrltOpg3y">Electrique</option>
+<?php getOptionMoteur()?>
         </select>
       </td>
       <td>
         <select name="marque" id="FieldMarque" style="border-radius:8px; border: 2px solid #150cd2; padding:4.5%;">
-          <option value="recOrrHKLZcLqHNKo">Aprilia</option>
-          <option value="recE2nDDtHuGKCLTw">BMW</option>
-          <option value="recuppuyZFiPdNZjV">Energica</option>
-          <option value="recY6j5DOliJfOxSX">Harley Davidson</option>
-          <option value="recAbiBQ0Po1yO5KO">Honda</option>
-          <option value="recjWiK7vav7x5PEh">Mercedes</option>
-          <option value="recI6leubd5GOEUQo">Peugeot</option>
-          <option value="recH3jAaZbWuzYumv">Renault</option>
-          <option value="rec7OGXKXDPDAO9uX">Suzuki</option>
-          <option value="recYYwgCmsPYrOONs">Tesla</option>
-          <option value="rececBeyGzmdZ613o">Toyota</option>
-          <option value="recKj6MJTgMOfmjRk">Yamaha</option>
+<?php getOptionMarque() ?>
         </select>
       </td>
       <form name='NewCar' id="NewCar" method="post" required>
@@ -99,7 +87,6 @@
 
 <script> 
 
-  const API_KEY='keyDNpzJwq1L9nspB';
   const URL= `https://api.airtable.com/v0/appLN11hnK1L9xW5Z/Vehicules?api_key=${API_KEY}`;
 
   const formulaire = document.getElementById('NewCar');
@@ -148,6 +135,7 @@
 })
 
 
+
 </script>
 
 
@@ -159,7 +147,7 @@
                 <div id="ipssi">
                     <a><img src="logoI.png" width="30" height="30" class="d-inline-block align-top"/></a>
                     <p>Ce projet à été réaliser par des éleves d'<a id="LinkIPSSI" href="https://ecole-ipssi.com/"><strong>IPSSI</strong></a></p>
-                    <p>le 3 et 4 octobre</p>
+                    <p>Du 3 au 6 octobre</p>
                 </div>
             </div>
             <div class="col-sm">

@@ -121,12 +121,12 @@ function getmoto1019(){
 function getmoto2022(){
     getTab("https://api.airtable.com/v0/appLN11hnK1L9xW5Z/Vehicules?sort%5B0%5D%5Bfield%5D=Annee&sort%5B0%5D%5Bdirection%5D=asc&view=moto2022m" );
 }
-/*
+
 function getOptionMarque()
 {
     $curl = curl_init();
 
-    curl_setopt($curl, CURLOPT_URL,"https://api.airtable.com/v0/appLN11hnK1L9xW5Z/Marques?view=Grid_view" );
+    curl_setopt($curl, CURLOPT_URL,"https://api.airtable.com/v0/appLN11hnK1L9xW5Z/Marques?&view=Grid_view" );
     
     curl_setopt($curl,CURLOPT_RETURNTRANSFER, true);
     
@@ -149,7 +149,36 @@ function getOptionMarque()
         echo '<option value="' . $res->id . '">' . $res->fields->Nom . '</option>';
     }
 
-}*/
+}
+
+function getOptionMoteur()
+{
+    $curl = curl_init();
+
+    curl_setopt($curl, CURLOPT_URL,"https://api.airtable.com/v0/appLN11hnK1L9xW5Z/Types?&view=Grid_view" );
+    
+    curl_setopt($curl,CURLOPT_RETURNTRANSFER, true);
+    
+    $authorization = "Authorization: Bearer keyDNpzJwq1L9nspB";
+    
+    curl_setopt($curl, CURLOPT_HTTPHEADER, array('Content-type: application/json', $authorization));
+    
+    //Forcer le certificat ssl
+    $certificate = "C:\wamp64\cacert.pem";
+    curl_setopt($curl, CURLOPT_CAINFO, $certificate);
+    curl_setopt($curl, CURLOPT_CAPATH, $certificate);
+
+
+    $resultat= curl_exec($curl);
+    
+    curl_close($curl);
+    //décodage du json récupérer pour etre exploiter
+    $resultat = json_decode($resultat);
+    foreach($resultat->records as $res){
+        echo '<option value="' . $res->id . '">' . $res->fields->Type . '</option>';
+    }
+
+}
 
 ?>
 <!-- lien bootsrap -->
@@ -159,7 +188,7 @@ function getOptionMarque()
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct" crossorigin="anonymous"></script>
 <!-- lien bootsrap  -->
 
-<!-- modale pour afficher les données  -->
+<!-- modale pour afficher les donées  -->
 <div class="modal fade" id="modifier" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered" role="document">
     <div class="modal-content">
@@ -174,19 +203,8 @@ function getOptionMarque()
         <div class="form-group">
             <label >Entrer la Marque</label> <br>
             <select name="marque" id="FieldMarquesModif" style="border-radius:8px; border: 2px solid #150cd2; padding:2.5%;" >
-          <option value="recOrrHKLZcLqHNKo">Aprilia</option>
-          <option value="recE2nDDtHuGKCLTw">BMW</option>
-          <option value="recuppuyZFiPdNZjV">Energica</option>
-          <option value="recY6j5DOliJfOxSX">Harley Davidson</option>
-          <option value="recAbiBQ0Po1yO5KO">Honda</option>
-          <option value="recjWiK7vav7x5PEh">Mercedes</option>
-          <option value="recI6leubd5GOEUQo">Peugeot</option>
-          <option value="recH3jAaZbWuzYumv">Renault</option>
-          <option value="rec7OGXKXDPDAO9uX">Suzuki</option>
-          <option value="recYYwgCmsPYrOONs">Tesla</option>
-          <option value="rececBeyGzmdZ613o">Toyota</option>
-          <option value="recKj6MJTgMOfmjRk">Yamaha</option>
-        </select>
+          <?php getOptionMarque()?>
+</select>
         </div>
 
         <div class="form-group">
@@ -197,9 +215,7 @@ function getOptionMarque()
         <div class="form-group">
             <label >Entrer le type Moteur</label><br>
             <select name="Moteur" id="FieldMoteurModif" style="border-radius:8px; border: 2px solid #150cd2; padding:3.5%;">
-                <option value="recntyRPWMQBGzzaT">Thermique</option>
-                <option value="recoa32F847uAeB2N">Hybride</option>
-                <option value="recohOXVDrltOpg3y">Electrique</option>
+            <?php getOptionMoteur() ?>
             </select>
         </div>
 
@@ -245,13 +261,13 @@ function getOptionMarque()
 <div class="modalPopUp" id="modalPopUp">
   <div class="modalPopUp-back"></div>
   <div class="modalPopUp-container">
-    Véhicule supprimé<br />
+    Véhicule supprimer<br />
     <a class="btn btn-primary" href="#" role="button" id="modalPopUp-close">Fermer</a>
   </div>
 </div>
 
 <script>
-     const API_KEY='keyfjX9CsC0bAcN1H';
+     const API_KEY='keyDNpzJwq1L9nspB';
      const URl= `https://api.airtable.com/v0/appLN11hnK1L9xW5Z/Vehicules?api_key=${API_KEY}`;
     function getdata(obj, id){
         document.getElementById("FieldMarquesModif").value = (obj.parentNode).parentNode.children.item(0).getAttribute('value') ;
@@ -265,7 +281,6 @@ function getOptionMarque()
     }
 
     function postdata(){
-        const API_KEY='keyfjX9CsC0bAcN1H';
         const URL= `https://api.airtable.com/v0/appLN11hnK1L9xW5Z/Vehicules?api_key=${API_KEY}`;
         let data = { 
             'records':[{

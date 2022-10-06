@@ -118,7 +118,7 @@ if(isset($_POST['button2022m'])) {
                 <div id="ipssi">
                     <a><img src="logoI.png" width="30" height="30" class="d-inline-block align-top"/></a>
                     <p>Ce projet à été réaliser par des éleves d'<a id="LinkIPSSI" href="https://ecole-ipssi.com/"><strong>IPSSI</strong></a></p>
-                    <p>le 3 et 4 octobre</p>
+                    <p>Du 3 au 6 octobre</p>
                 </div>
             </div>
             <div class="col-sm">
