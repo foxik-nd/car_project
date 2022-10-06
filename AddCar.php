@@ -80,7 +80,7 @@
 <div class="modalPopUp" id="modalPopUp">
   <div class="modalPopUp-back"></div>
   <div class="modalPopUp-container">
-    Véhicule Créer<br />
+    Véhicule Créé<br />
     <a class="btn btn-primary" href="#" role="button" id="modalPopUp-close">Fermer</a>
   </div>
 </div>

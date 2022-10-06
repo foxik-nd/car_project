@@ -261,7 +261,7 @@ function getOptionMoteur()
 <div class="modalPopUp" id="modalPopUp">
   <div class="modalPopUp-back"></div>
   <div class="modalPopUp-container">
-    Véhicule supprimer<br />
+    Véhicule supprimé<br />
     <a class="btn btn-primary" href="#" role="button" id="modalPopUp-close">Fermer</a>
   </div>
 </div>
