@@ -77,11 +77,11 @@
 </div>
 
 <!--pop up validation -->
-<div class="modalPopUp" id="modalPopUp">
-  <div class="modalPopUp-back"></div>
-  <div class="modalPopUp-container">
+<div class="modalPopUpC" id="modalPopUpC">
+  <div class="modalPopUpC-back"></div>
+  <div class="modalPopUpC-container">
     Véhicule Créé<br />
-    <a class="btn btn-primary" href="#" role="button" id="modalPopUp-close">Fermer</a>
+    <a class="btn btn-primary" href="#" role="button" id="modalPopUpC-close">Fermer</a>
   </div>
 </div>
 
@@ -119,7 +119,7 @@
       if(response.ok){
         response.json().then((NewCar) => {
           console.log(NewCar);
-          document.getElementById('modalPopUp').style.display = 'block';
+          document.getElementById('modalPopUpC').style.display = 'block';
         })
       }else{
         console.log('Erreur statut !=200');
@@ -129,8 +129,8 @@
     })
   })
 
-  document.getElementById('modalPopUp-close').addEventListener('click', function(e) {
-  document.getElementById('modalPopUp').style.display = 'none';
+  document.getElementById('modalPopUpC-close').addEventListener('click', function(e) {
+  document.getElementById('modalPopUpC').style.display = 'none';
   document.location.reload();
 })
 

@@ -261,11 +261,11 @@ function getOptionMoteur()
 </div>
 
 <!--pop up Suppression -->
-<div class="modalPopUp" id="modalPopUp">
-  <div class="modalPopUp-back"></div>
-  <div class="modalPopUp-container">
+<div class="modalPopUpS" id="modalPopUpS">
+  <div class="modalPopUpS-back"></div>
+  <div class="modalPopUpS-container">
     Véhicule supprimé<br />
-    <a class="btn btn-primary" href="#" role="button" id="modalPopUp-close">Fermer</a>
+    <a class="btn btn-primary" href="#" role="button" id="modalPopUpS-close">Fermer</a>
   </div>
 </div>
 
@@ -334,10 +334,10 @@ function getOptionMoteur()
     }
     
 });
-document.getElementById('modalPopUp').style.display = 'block';
+document.getElementById('modalPopUpS').style.display = 'block';
 }
-document.getElementById('modalPopUp-close').addEventListener('click', function(e) {
-  document.getElementById('modalPopUp').style.display = 'none';
+document.getElementById('modalPopUpS-close').addEventListener('click', function(e) {
+  document.getElementById('modalPopUpS').style.display = 'none';
   document.location.reload();
 })
 </script>
