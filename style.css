@@ -176,6 +176,10 @@ input[type=text]{
     padding-top: 3%;
     padding-bottom: 3%;
 }
+#btn_modif:hover{
+    background-color: #170afe;
+    border-color:  #170afe;
+}
 
 /*bouton supprimé*/
 #btn_supp{
@@ -185,6 +189,11 @@ input[type=text]{
     border-radius: 8px;
     padding-top: 3%;
     padding-bottom: 3%;
+}
+
+#btn_supp:hover{
+    background-color: rgb(152, 1, 1);
+    border-color: rgb(152, 1, 1);
 }
 
 
